@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title>Aula 3 - Java Web Index</title>
+</head>
+<body bgcolor="#DBEFF0">
+	<h1> Cardapio</h1>
+	<br />	
+	<f:view>
+		<h:form>
+			<h:panelGrid columns="2" border="1">
+				<h:outputLabel value="Nome" for="nome" />
+				<h:inputText id="nome" value="#{cardapioMBean.nome}" required="true" requiredMessage="Campo nome obrigatório"/>
+				<h:outputLabel value="Valor" for="valor" />
+				<h:inputText id="valor" value="#{cardapioMBean.valor}" required="true" requiredMessage="Campo valor obrigatório" />
+				<h:outputLabel value="Tipo" for="tipo" />
+				<h:inputText id="tipo" value="#{cardapioMBean.tipo}" required="true" requiredMessage="Campo tipo obrigatório"/>				
+				<!--  <h:outputText value="#{bundle.login}" />
+				<h:inputText id="nome" value="#{cardapioMBean.nome}" required="true" /> -->				
+				<h:commandButton action="#{cardapioMBean.salvar}" value="Salvar" />
+				<h:messages />
+			</h:panelGrid>
+		</h:form>
+		<br />
+			<h:outputText value="#{cardapioMBean.msg}" />
+		
+	</f:view>
+</body>	
+</html>
